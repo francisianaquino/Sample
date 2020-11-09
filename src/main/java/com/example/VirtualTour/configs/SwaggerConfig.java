@@ -32,7 +32,7 @@ public class SwaggerConfig {
                 "Visitor Registration",
                 "v1.0",
                 "Terms of service",
-                new Contact("Francis Ian S. Aquino", "https://github.com/francisianaquino/", "fisaquino@gmail.com"),
+                new Contact("", "", ""),
                 "License of API", "API license URL", Collections.emptyList()
         );
     }

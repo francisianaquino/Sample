@@ -40,13 +40,10 @@ public class Visitor {
     @JsonProperty(value = "age")
     private Integer age;
 
-    @Enumerated(EnumType.STRING)
-    @Column(length = 10)
+//    @Enumerated(EnumType.STRING)
     @JsonProperty(value = "sex")
-    private Sex sex;
+    private String sex;
 
-    @Valid
-    @NotBlank(message = "institution is required")
     @JsonProperty(value = "institution")
     private String institution;
 

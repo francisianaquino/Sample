@@ -1,5 +1,16 @@
 package com.example.VirtualTour.enums;
 
 public enum Sex {
-    Male, Female
+    MALE("Male"),
+    FEMALE("Female");
+
+    private String label;
+
+    private Sex(String label) {
+        this.label = label;
+    }
+
+    public String getLabel() {
+        return label;
+    }
 }
