@@ -19,7 +19,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table(name="visitors")
-@JsonPropertyOrder(value = {"id", "name", "province", "age", "sex", "institution", "date_added"})
+@JsonPropertyOrder(value = {"id", "name", "province", "age", "sex", "institution", "category", "date_added"})
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
 public class Visitor {
 
@@ -44,8 +44,14 @@ public class Visitor {
     @JsonProperty(value = "sex")
     private String sex;
 
+    @Valid
+    @NotBlank(message = "institution is required")
     @JsonProperty(value = "institution")
     private String institution;
+
+//    @Enumerated(EnumType.STRING)
+    @JsonProperty(value = "category")
+    private String category;
 
     @CreationTimestamp
     @Column(updatable = false)

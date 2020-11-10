@@ -1,29 +1,29 @@
 package com.example.VirtualTour.converters;
 
-import com.example.VirtualTour.enums.Institution;
+import com.example.VirtualTour.enums.Category;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-public class InstitutionConverter implements AttributeConverter<Institution, String> {
+public class CategoryConverter implements AttributeConverter<Category, String> {
 
     @Override
-    public String convertToDatabaseColumn(Institution institution) {
-        if (institution == null) {
+    public String convertToDatabaseColumn(Category category) {
+        if (category == null) {
             return null;
         }
-        return institution.getLabel();
+        return category.getLabel();
     }
 
     @Override
-    public Institution convertToEntityAttribute(String label) {
+    public Category convertToEntityAttribute(String label) {
         if (label == null) {
             return null;
         }
 
-        return Stream.of(Institution.values())
+        return Stream.of(Category.values())
                 .filter(i -> i.getLabel().equals(label))
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);

@@ -1,6 +1,6 @@
 package com.example.VirtualTour.enums;
 
-public enum Institution {
+public enum Category {
     SME("SME"),
     ACADEME("Academe"),
     LGU("LGU"),
@@ -11,7 +11,7 @@ public enum Institution {
 
     private String label;
 
-    private Institution(String label) {
+    private Category(String label) {
         this.label = label;
     }
 
