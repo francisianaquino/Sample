@@ -1,6 +1,5 @@
 package com.example.VirtualTour.entities;
 
-import com.example.VirtualTour.enums.Sex;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -24,7 +23,7 @@ import java.util.Date;
 public class Visitor {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @JsonProperty(value = "name")
