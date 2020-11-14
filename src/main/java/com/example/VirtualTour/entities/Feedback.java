@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -36,4 +38,9 @@ public class Feedback {
 
     @JsonProperty(value = "query")
     private String query;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    @JsonProperty(value = "date_added")
+    private Date date_added;
 }
